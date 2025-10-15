@@ -1,4 +1,4 @@
-## Developer: {Full Name}
+## Developer: Theodore Weicker
 
 Closes #{ISSUE NUMBER HERE}
 
