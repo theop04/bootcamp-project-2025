@@ -9,13 +9,12 @@ type Blog = {
 
 const blogs: Blog[] = [
   {
-    title: "How to Build a React App in 2024",
+    title: "How to Get Rich Guaranteed... in 40 Years",
     date: "2025-10-14",
-    description:
-      "A step-by-step guide to building a React application with TypeScript.",
-    image: "./images/react-guide.png",
-    imageAlt: "React guide image",
-    slug: "how-to-build-a-react-application-in-2024",
+    description: "A step-by-step guide to building generational wealth",
+    image: "./images/upward_stocks.jpg",
+    imageAlt: "Upward stocks image",
+    slug: "how-to-get-rich-guaranteed",
   },
   {
     title: "Understanding TypeScript Types",
@@ -31,10 +30,10 @@ const blogs: Blog[] = [
 const blogContainer = document.getElementById("blog-container");
 
 if (blogContainer) {
-    blogs.forEach((blog) => {
+  blogs.forEach((blog) => {
     // create container div :)
-    const blogDiv = document.createElement('div');
-    blogDiv.classList.add('blog-post'); 
+    const blogDiv = document.createElement("div");
+    blogDiv.classList.add("blog-post");
 
     //img
     const imageElement = document.createElement("img");
@@ -42,28 +41,33 @@ if (blogContainer) {
     imageElement.alt = blog.imageAlt;
 
     //title
-    const titleElement = document.createElement('h1');
+    const titleElement = document.createElement("h1");
     titleElement.textContent = blog.title;
 
     //desc
-    const descriptionElement = document.createElement('p');
+    const descriptionElement = document.createElement("p");
     descriptionElement.textContent = blog.description;
 
     // date
-    const dateElement = document.createElement('p');
+    const dateElement = document.createElement("p");
     dateElement.textContent = blog.date;
-    blogDiv.appendChild(dateElement);
+    
+
+    // slug / url
+    const link = document.createElement("a");
+    link.href = `blogs/${blog.slug}.html`; 
+    link.classList.add('blog-link');
 
     blogDiv.appendChild(titleElement);
     blogDiv.appendChild(imageElement);
     blogDiv.appendChild(descriptionElement);
+    blogDiv.appendChild(dateElement);
+
+    blogDiv.appendChild(link);
 
     //append blog post to main container
     blogContainer.appendChild(blogDiv);
-    });
+  });
+} else {
+  console.error("Blog container not found");
 }
-else{
-    console.error("Blog container not found");
-}
-
-
