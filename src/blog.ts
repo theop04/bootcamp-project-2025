@@ -51,12 +51,12 @@ if (blogContainer) {
     // date
     const dateElement = document.createElement("p");
     dateElement.textContent = blog.date;
-    
 
-    // slug / url
+    // link
     const link = document.createElement("a");
-    link.href = `blogs/${blog.slug}.html`; 
-    link.classList.add('blog-link');
+    link.href = `blogs/${blog.slug}.html`;
+    link.classList.add("blog-link");
+    link.textContent = "Read more →";
 
     blogDiv.appendChild(titleElement);
     blogDiv.appendChild(imageElement);
