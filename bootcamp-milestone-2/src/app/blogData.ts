@@ -13,7 +13,7 @@ const blogs: Blog[] = [
     title: "How to Get Rich Guaranteed... in 40 Years",
     date: "2025-10-14",
     description: "A step-by-step guide to building generational wealth",
-    image: "./public/images/upward_stocks.jpg",  //this path might be wrong
+    image: "/images/upward_stocks.jpg",  //this path might be wrong
     imageAlt: "Upward stocks image",
     slug: "how-to-get-rich-guaranteed",
   },
@@ -22,7 +22,7 @@ const blogs: Blog[] = [
     date: "2025-10-10",
     description:
       "Learn how TypeScript types help you write safer and cleaner code.",
-    image: "./public/images/ts-types.png", //this path might be wrong
+    image: "/images/ts-types.png", //this path might be wrong
     imageAlt: "TypeScript types illustration",
     slug: "understanding-typescript-types",
   },

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 export default function Home() {
   return (
     <main>
@@ -24,8 +25,7 @@ export default function Home() {
             I'm a 3rd year Computer Engineering major and Data Science minor.
           </p>
           <p>
-            A fun fact about me is that I am Theodore Weicker
-            <strong>the fifth (V)</strong>, which is on my American passport but
+            A fun fact about me is that I am Theodore Weicker <strong>the fifth (V)</strong>, which is on my American passport but
             not my Danish one.
           </p>
           <p>
