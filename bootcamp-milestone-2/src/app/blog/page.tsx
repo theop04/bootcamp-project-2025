@@ -16,6 +16,7 @@ export default function BlogPage() {
             image={blog.image}
             imageAlt={blog.imageAlt}
             slug={blog.slug}
+            content={null}
           />
         ))}
       </div>

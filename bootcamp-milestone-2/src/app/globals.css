@@ -184,3 +184,50 @@ form {
   width: 100%;
   height: 2.5rem;
 }
+
+
+/* newly added things */
+h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0.75rem 0 0.25rem 0;
+  font-weight: bold;
+}
+
+/* Paragraphs */
+p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0.5rem 0 0.5rem 1.5rem;
+}
+
+li {
+  margin: 0.25rem 0;
+  list-style-type: disc; 
+}
+
+/* Links */
+a {
+  color: var(--cg-blue);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
