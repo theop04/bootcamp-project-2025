@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ProjectCard from "../projectCard";
 
 export default function PortfolioPage() {
   return (
@@ -6,30 +6,25 @@ export default function PortfolioPage() {
       <h1 className="page-title">Theodore's Portfolio</h1>
 
       <div className="portfolio">
-        <p>Hello World! This is my portfolio.</p>
+        <ProjectCard
+          title="H4I Starter Pack Website"
+          description="A responsive web project built for the Hack4Impact Starter Pack."
+          image="/images/h4i_website_pic.jpg"
+          imageAlt="Screenshot of H4I website homepage"
+          link="/"
+        />
 
-        <div className="h4i-website-image">
-          <a href="/">
-            <Image
-              src="/images/h4i_website_pic.jpg"
-              alt="A pic of my h4i website homepage"
-              width={300}
-              height={200}
-            />
-          </a>
-        </div>
-
-        <div className="project-details">
-          <p className="project-name">H4I Starter Pack Website</p>
-          <p className="project-description">
-            This was the website I had to build for the H4I Start Pack :D
-          </p>
-          <a href="/">Learn More!</a>
-        </div>
+        <ProjectCard
+          title="STAT 331 Portfolio"
+          description="Portfolio to show profieciency in all the learning targets for my Statistical Computing with R class!"
+          image="/images/R_logo.png"
+          imageAlt="R Logo for class"
+          link="https://github.com/theop04/STAT331_portfolio_TWV"
+        />
       </div>
 
       <footer className="footer">
-        © 2025 Theodore's Website | All Rights Reserved
+        © 2025 Theodore&apos;s Website | All Rights Reserved
       </footer>
     </main>
   );
