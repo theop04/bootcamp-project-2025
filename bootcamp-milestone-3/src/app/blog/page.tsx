@@ -1,7 +1,22 @@
 import BlogPreview from '@/components/blogPreview';
-import blogs, { Blog } from '../blogData';
+import Blog from '@/database/blogSchema';
+import connectDB from '@/database/db'
 
-export default function BlogPage() {
+
+async function getBlogs() {
+  await connectDB()
+  try {
+    const blogs = await Blog.find().sort({ date: -1 }).orFail()
+    return blogs
+  } catch (err) {
+    console.error(err)
+    return []
+  }
+}
+
+export default async function BlogPage() {
+  const blogs = await getBlogs()
+
   return (
     <main>
       <h1 className="page-title">Theodore's Blog</h1>
@@ -12,9 +27,9 @@ export default function BlogPage() {
             key={blog.slug}
             title={blog.title}
             description={blog.description}
-            date={blog.date}
+            date={new Date(blog.date).toDateString()}
             image={blog.image}
-            imageAlt={blog.imageAlt}
+            imageAlt={blog.image_alt}
             slug={blog.slug}
             content={null}
           />
