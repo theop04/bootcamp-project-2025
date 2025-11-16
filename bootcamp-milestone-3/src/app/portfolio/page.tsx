@@ -1,26 +1,36 @@
 import ProjectCard from "../projectCard";
+import connectDB from '@/database/db';
+import Project from "@/database/projectSchema";
 
-export default function PortfolioPage() {
+async function getProjects() {
+  await connectDB();
+  try {
+    const projects = await Project.find().orFail();
+    return projects;
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
+
+export default async function PortfolioPage() {
+  const projects = await getProjects();
+
   return (
     <main>
       <h1 className="page-title">Theodore's Portfolio</h1>
 
       <div className="portfolio">
-        <ProjectCard
-          title="H4I Starter Pack Website"
-          description="A responsive web project built for the Hack4Impact Starter Pack."
-          image="/images/h4i_website_pic.jpg"
-          imageAlt="Screenshot of H4I website homepage"
-          link="/"
-        />
-
-        <ProjectCard
-          title="STAT 331 Portfolio"
-          description="Portfolio to show profieciency in all the learning targets for my Statistical Computing with R class!"
-          image="/images/R_logo.png"
-          imageAlt="R Logo for class"
-          link="https://github.com/theop04/STAT331_portfolio_TWV"
-        />
+        {projects.map((project: any) => (
+          <ProjectCard
+            key={project._id}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            imageAlt={project.image_alt}
+            link={project.link}
+          />
+        ))}
       </div>
 
       <footer className="footer">
