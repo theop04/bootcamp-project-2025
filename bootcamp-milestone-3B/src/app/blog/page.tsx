@@ -1,21 +1,20 @@
-import BlogPreview from '@/components/blogPreview';
-import Blog from '@/database/blogSchema';
-import connectDB from '@/database/db'
-
+import BlogPreview from "@/components/blogPreview";
+import Blog from "@/database/blogSchema";
+import connectDB from "@/database/db";
 
 async function getBlogs() {
-  await connectDB()
+  await connectDB();
   try {
-    const blogs = await Blog.find().sort({ date: -1 }).orFail()
-    return blogs
+    const blogs = await Blog.find().sort({ date: -1 }).orFail();
+    return blogs;
   } catch (err) {
-    console.error(err)
-    return []
+    console.error(err);
+    return [];
   }
 }
 
 export default async function BlogPage() {
-  const blogs = await getBlogs()
+  const blogs = await getBlogs();
 
   return (
     <main>

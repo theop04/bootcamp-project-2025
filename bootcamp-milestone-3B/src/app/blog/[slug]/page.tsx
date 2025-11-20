@@ -22,7 +22,19 @@ export default async function BlogPost({
 }) {
   const blog = await getBlogBySlug(params.slug);
 
-  if (!blog) return notFound();
+  if (!blog) {
+    return (
+      <main style={{ padding: "2rem", textAlign: "center" }}>
+        <h1>Blog not found</h1>
+        <p>We couldn't find a blog post with that URL.</p>
+        <Link href="/blog">
+          <span style={{ color: "blue", textDecoration: "underline" }}>
+            ← Back to Blog
+          </span>
+        </Link>
+      </main>
+    );
+  }
 
   return (
     <main>
