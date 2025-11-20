@@ -1,9 +1,10 @@
-import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/blogPreview.module.css";
 import Blog from "@/database/blogSchema";
 import connectDB from "@/database/db";
+import Comment from "@/components/Comment";
+import { IComment } from "@/database/blogSchema";
 
 async function getBlogBySlug(slug: string) {
   await connectDB();
@@ -15,12 +16,9 @@ async function getBlogBySlug(slug: string) {
   }
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const blog = await getBlogBySlug(params.slug);
+export default async function BlogPost(props: { params: { slug: string } }) {
+  const { slug } = props.params;
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     return (
@@ -54,6 +52,16 @@ export default async function BlogPost({
         className={styles.blogContent}
         dangerouslySetInnerHTML={{ __html: blog.content }}
       />
+
+      <section style={{ marginTop: "2rem" }}>
+        <h2>Comments</h2>
+
+        {blog.comments && blog.comments.length > 0 ? (
+          blog.comments.map((c: IComment, i: number) => <Comment key={i} comment={c} />)
+        ) : (
+          <p style={{ opacity: 0.7 }}>Be the first to comment!</p>
+        )}
+      </section>
 
       <Link href="/blog" className={styles.backLink}>
         ← Back to Blog
