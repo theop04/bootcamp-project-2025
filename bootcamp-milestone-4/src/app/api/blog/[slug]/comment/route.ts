@@ -57,7 +57,7 @@ export async function POST(
       { status: 201 }
     );
   } catch (err) {
-    console.error("COMMENT POST ERROR:", err);
+    console.error("Comment POST error:", err);
 
     return NextResponse.json(
       { error: "Something went wrong while saving the comment." },
