@@ -205,7 +205,10 @@ export default function ResumePage() {
         </ul>
       </section>
 
-      <footer className="footer">
+      <footer 
+        className="footer"
+        style={{ left: 0, right: 0, textAlign: 'center' }}
+      >
         © 2025 Theodore's Website | All Rights Reserved
       </footer>
     </main>
