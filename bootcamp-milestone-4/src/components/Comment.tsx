@@ -5,9 +5,6 @@ type CommentProps = {
 }
 
 
-{/* Modularizing code into seperate functions is useful.
-		Makes your code look nicer and allows for better readability.
-	*/}
 function parseCommentTime(time: Date){
 	const d = new Date(time);
 
@@ -29,18 +26,6 @@ function Comment({ comment }: CommentProps) {
             <span>{parseCommentTime(comment.time)}</span>
         </div>
     );
-//     return (
-//     <div style={{
-//       borderBottom: "1px solid #ddd",
-//       padding: "1rem 0"
-//     }}>
-//       <h4 style={{ marginBottom: 4 }}>{comment.user}</h4>
-//       <p style={{ marginBottom: 6 }}>{comment.comment}</p>
-//       <span style={{ fontSize: "0.8rem", color: "#666" }}>
-//         {parseCommentTime(comment.time)}
-//       </span>
-//     </div>
-//   );
 }
 
 export default Comment;

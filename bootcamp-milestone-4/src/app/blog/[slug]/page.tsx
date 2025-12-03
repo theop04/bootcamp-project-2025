@@ -137,7 +137,7 @@ export default function BlogPost() {
             onChange={(e) => setCommentForm({ ...commentForm, comment: e.target.value })}
             disabled={submitting}
           />
-          <button type="submit" disabled={submitting}>
+          <button type="submit" disabled={submitting} className="submit-button">
             {submitting ? "Posting..." : "Post Comment"}
           </button>
           {error && <p style={{ color: "red" }}>{error}</p>}

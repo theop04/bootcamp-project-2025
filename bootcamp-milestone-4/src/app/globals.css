@@ -231,3 +231,26 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+/* For submit buttons */
+.submit-button {
+  background-color: var(--cg-black);
+  color: var(--cg-white);
+  border: 1px solid var(--cg-black);
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--cg-blue);
+  border-color: var(--cg-blue);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
