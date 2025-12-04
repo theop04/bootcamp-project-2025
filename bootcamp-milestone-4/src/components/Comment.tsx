@@ -20,10 +20,18 @@ function parseCommentTime(time: Date){
 
 function Comment({ comment }: CommentProps) {
     return (
-        <div>
-            <h4>{comment.user}</h4>
-            <p>{comment.comment}</p>
-            <span>{parseCommentTime(comment.time)}</span>
+        <div style={{
+            backgroundColor: "var(--cg-white)",
+            padding: "10px 15px",
+            borderRadius: "4px",
+            border: "1px solid #ddd",
+            marginBottom: "10px",
+        }}>
+            <h4 style={{ margin: "0 0 5px 0" }}>{comment.user}</h4>
+            <p style={{ margin: "0 0 5px 0" }}>{comment.comment}</p>
+            <span style={{ fontSize: "0.85rem", color: "#666" }}>
+                {parseCommentTime(comment.time)}
+            </span>
         </div>
     );
 }
